@@ -1,6 +1,8 @@
-# Meruru
+# Meruru改
 
-A Simple [Mirakurun](https://github.com/Chinachu/Mirakurun) Client for Mac OS
+本家: https://github.com/castaneai/Meruru
+
+A Simple [Mirakurun](https://github.com/Chinachu/Mirakurun)/[mirakc](https://github.com/mirakc/mirakc) Client for Mac OS
 
 ![Meruru](Meruru.png)
 
@@ -18,7 +20,11 @@ Put the Mirakurun HTTP endpoint in `"mirakurunPath"` as follows:
 ## Build
 
 - Install [Carthage](https://github.com/Carthage/Carthage)
-- Run `carthage install`
+- Run `carthage bootstrap`
+
+## 本家との違い
+- mirakcへの対応
+- インターレース解除
 
 ## License
 
