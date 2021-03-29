@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSComboBoxDelegate {
             case .success(let status):
                 AppConfig.shared.currentData?.mirakurunPath = mirakurunPath
                 DispatchQueue.main.async {
-                    self.statusTextField.stringValue = "Mirakurun: v" + status.version
+                    self.statusTextField.stringValue = "Mirakurun: v" + (status.version ?? " unknown")
                 }
                 self.mirakurun.fetchServices { result in
                     switch result {
@@ -112,7 +112,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSComboBoxDelegate {
             }
         }
         player.stop()
-        let media = VLCMedia(url: mirakurun.getStreamURL(service: selectedService))
+        let url = mirakurun.getStreamURL(service: selectedService)
+        let media = VLCMedia(url: url)
         player.media = media
         player.play()
     }
