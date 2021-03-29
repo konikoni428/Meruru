@@ -74,6 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSComboBoxDelegate {
         videoWrapView.addSubview(videoView)
 
         player = VLCMediaPlayer(videoView: videoView)
+        player.setDeinterlace(VLCDeinterlace.on, withFilter: "linear")
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
